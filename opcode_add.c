@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * fun_add - adds the top two elements of the stack.
- * head: pointer to the top of the stack
- * line_num: line_number
+ * @head: pointer to the top of the stack
+ * @line_num: line_number
  * Return: nothing
 */
 void fun_add(stack_t **head, unsigned int line_num)
