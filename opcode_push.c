@@ -17,8 +17,8 @@ void fun_push(stack_t **head, unsigned int line_num)
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
 				flag = 1; }
-		if (fag == 1)
-		{ fprntf(stderr, "L%d: usage: push integer\n", line_num);
+		if (flag == 1)
+		{ fprintf(stderr, "L%d: usage: push integer\n", line_num);
 			fclose(bus.file);
 			free(bus.content);
 			free_stack(*head);
@@ -31,7 +31,7 @@ void fun_push(stack_t **head, unsigned int line_num)
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode(head, n);
+		fun_add_node(head, n);
 	else
-		addqueue(head, n);
+		add_queue(head, n);
 }

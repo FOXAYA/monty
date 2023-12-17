@@ -1,29 +1,30 @@
 #include "monty.h"
 /**
 * execute - executes the opcode
-* stack: head linked list - stack
-* line_count: line counter
-* file: poiner to monty file
-* content: line content
+* @stack: head linked list - stack
+* @line_count: line counter
+* @file: poiner to monty file
+* @content: line content
 * Return: no return
 */
-int execute(char *content, stack_t **stack, unsigned int line_count, FILE *file)
+int execute(char *content, stack_t **stack,
+		unsigned int line_count, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
-				{"add", f_add},
-				{"nop", f_nop},
-				{"sub", f_sub},
-				{"div", f_div},
-				{"mul", f_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
-				{"pstr", f_pstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},
-				{"queue", f_queue},
+				{"opcode_push", fun_push}, {"opcode_pall", fun_pall}, {"opcode_pint", fun_pint},
+				{"opcode_pop", fun_pop},
+				{"opcode_swap", fun_swap},
+				{"opcode_add", fun_add},
+				{"opcode_nop", fun_nop},
+				{"opcode_sub", fun_sub},
+				{"opcode_div", fun_div},
+				{"opcode_mul", fun_mul},
+				{"opcode_mod", fun_mod},
+				{"opcode_pchar", fun_pchar},
+				{"opcode_str", fun_str},
+				{"rotl", fun_rotl},
+				{"rotr", fun_rotr},
+				{"queue", fun_queue},
 				{"stack", f_stack},
 				{NULL, NULL}
 				};
@@ -37,7 +38,7 @@ int execute(char *content, stack_t **stack, unsigned int line_count, FILE *file)
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, line_count);
+		{	opst[i].fun(stack, line_count);
 			return (0);
 		}
 		i++;

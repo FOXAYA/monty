@@ -11,7 +11,7 @@ void fun_pchar(stack_t **head, unsigned int line_num)
 	stack_t *h;
 
 	h = *head;
-	i(!h)
+	if (!h)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
 		fclose(bus.file);

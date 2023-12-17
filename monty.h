@@ -49,7 +49,7 @@ extern bus_t bus;
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*fun)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
@@ -65,8 +65,15 @@ void fun_pchar(stack_t **head, unsigned int line_num);
 void fun_pint(stack_t **head, unsigned int line_num);
 void fun_pop(stack_t **head, unsigned int line_num);
 void fun_push(stack_t **head, unsigned int line_num);
-void fun_str(stack_t **stack, unsigned int line_num);
+void fun_str(stack_t **head, unsigned int line_num);
 void fun_sub(stack_t **head, unsigned int line_num);
+void fun_swap(stack_t **head, unsigned int line_num);
 void f_stack(stack_t **head, unsigned int line_num);
+void fun_add(stack_t **head, unsigned int line_num);
+void fun_queue(stack_t **head, unsigned int line_num);
+void add_queue(stack_t **head, int n);
+void fun_rotl(stack_t **head,  __attribute__((unused)) unsigned int line_num);
+void fun_rotr(stack_t **head, __attribute__((unused)) unsigned int line_num);
 
+#endif
 
