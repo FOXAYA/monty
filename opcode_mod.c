@@ -3,8 +3,8 @@
 /**
  * fun_mod - computes the module  of the second top element
  *           of stack with the top element
- * head: pointer to the top element of stack
- * line_num: line number of the opcode 
+ * @head: pointer to the top element of stack
+ * @line_num: line number of the opcode
  * Return: nothing
  */
 void fun_mod(stack_t **head, unsigned int line_num)

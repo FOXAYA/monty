@@ -2,10 +2,10 @@
 
 /**
  * fun_div - divides the top two elements of the stack.
- * head: stack headreturn
- * line_num: line_number
- * Return: no 
-*/
+ * @head: stack headreturn
+ * @line_num: line_number
+ * Return: no
+ */
 void fun_div(stack_t **head, unsigned int line_num)
 {
 	stack_t *h;

@@ -2,8 +2,8 @@
 
 /**
  * fun_mul - multiplies the top of two elements of the stack.
- * head: pointer double to the head of stack
- * line_num: the current  line number in file
+ * @head: pointer double to the head of stack
+ * @line_num: the current  line number in file
  * Return: no return
 */
 void fun_mul(stack_t **head, unsigned int line_num)
